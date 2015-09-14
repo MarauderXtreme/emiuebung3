@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="uebung3.xsl"?>
+<!DOCTYPE person[
+	<!ELEMENT person (name, geburtsjahr, werdegang)>
+	
+	<!ELEMENT name (vorname+, nachname)>
+	<!ATTLIST name 	titel CDATA #IMPLIED
+									anrede CDATA #REQUIRED
+	>
+	
+	<!ELEMENT vorname (#PCDATA)>
+	<!ELEMENT nachname (#PCDATA)>
+	
+	<!ELEMENT geburtsjahr (#PCDATA)>
+	<!ELEMENT werdegang (ausbildung | beruf)*>
+	
+	<!ELEMENT ausbildung (#PCDATA)>
+	<!ELEMENT beruf (#PCDATA)>
+]>
+
+<person>
+	<name titel="Prof. Dr.-Ing. habil." anrede="Herr">
+		<vorname>Peter</vorname>
+		<vorname>Dieter</vorname>
+		<nachname>Miller</nachname>
+	</name>
+	<geburtsjahr>1970</geburtsjahr>
+	<werdegang>
+		<ausbildung>Tischler</ausbildung>
+		<beruf>Hausmeister</beruf>
+		<ausbildung>Studium Informatik</ausbildung>
+		<ausbildung>Promotion</ausbildung>
+		<ausbildung>Habilitation</ausbildung>
+		<beruf>Professor</beruf>
+	</werdegang>
+</person>
